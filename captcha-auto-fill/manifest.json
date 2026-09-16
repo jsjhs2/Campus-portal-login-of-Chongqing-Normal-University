@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "重师校园门户登录自动填充",
+  "version": "1.0",
+  "description": "仅用于学习测试，csxrz.cqnu.edu.cn统一认证页面，填充账号密码+识别验证码",
+  "permissions": ["storage"],
+  "host_permissions": ["https://csxrz.cqnu.edu.cn/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://csxrz.cqnu.edu.cn/cas/login*"],
+      "js": ["lib/tesseract.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["lib/*"],
+      "matches": ["https://csxrz.cqnu.edu.cn/*"]
+    }
+  ]
+}
+
